@@ -18,10 +18,10 @@ const About = () => {
           <Col md={8}>
             <Carousel>
               <Carousel.Item>
-                <img className="d-block w-100" src="user2.jpg" alt="User1 picture 1" />
+                <img className="d-block w-100" src="aa.jpg" alt="User1 picture 1" />
               </Carousel.Item>
               <Carousel.Item>
-                <img className="d-block w-100" src="user2.jpg" alt="User1 picture 2" />
+                <img className="d-block w-100" src="aa.jpg" alt="User1 picture 2" />
               </Carousel.Item>
               <Carousel.Item>
                 <img className="d-block w-100" src="user2.jpg" alt="User1 picture 3" />
