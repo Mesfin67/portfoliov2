@@ -9,7 +9,7 @@ const Home = () => {
         <Row className="home-row align-items-center justify-content-center">
           <Col md={6} className="home-image text-center">
             <img
-              src="user2.jpg"
+              src="aa.jpg"
               alt="User2"
               className="img-fluid rounded-circle slide-in-left"
             />
