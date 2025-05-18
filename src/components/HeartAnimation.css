@@ -15,7 +15,7 @@
 .big-heart {
   width: 200px;
   height: 200px;
-  background: url("/user2.jpg") no-repeat center center; /* Ensure the file is in the public folder */
+  background: url("/aa.jpg") no-repeat center center; /* Ensure the file is in the public folder */
   background-size: contain;
   animation: vibrate 1s infinite;
 }
@@ -33,7 +33,7 @@
   bottom: 0;
   width: 20px;
   height: 20px;
-  background: url("/user2.jpg") no-repeat center center; /* Ensure the file is in the public folder */
+  background: url("/aa.jpg") no-repeat center center; /* Ensure the file is in the public folder */
   background-size: contain;
   animation: bubble 3s ease-in-out infinite;
   opacity: 0.8;
