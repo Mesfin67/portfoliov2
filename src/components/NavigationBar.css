@@ -1,0 +1,54 @@
+/* Navbar background with a translucent blush pink */
+.custom-navbar {
+  background: rgba(255, 192, 203, 0.5);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 0;
+}
+
+/* Brand styles */
+.brand {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Nav links styling */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #fff;
+}
+
+/* Custom Toggler Styling */
+.custom-toggler {
+  padding: 0.25rem 0.5rem;
+  font-size: 1.2rem;
+  background: transparent;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.custom-toggler:focus,
+.custom-toggler:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Toggler Icon styling */
+.toggler-icon {
+  font-size: 1.5rem;
+  color: #fff;
+}

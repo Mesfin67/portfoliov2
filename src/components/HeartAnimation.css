@@ -1,0 +1,83 @@
+.heart-animation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.big-heart {
+  width: 200px;
+  height: 200px;
+  background: url("/user2.jpg") no-repeat center center; /* Ensure the file is in the public folder */
+  background-size: contain;
+  animation: vibrate 1s infinite;
+}
+
+@keyframes vibrate {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.05) rotate(2deg); }
+  50% { transform: scale(1) rotate(0deg); }
+  75% { transform: scale(1.05) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.small-hearts .small-heart {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background: url("/user2.jpg") no-repeat center center; /* Ensure the file is in the public folder */
+  background-size: contain;
+  animation: bubble 3s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+/* Positioning each small heart with random-like delays */
+.small-hearts .small-heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.small-hearts .small-heart:nth-child(2) { left: 30%; animation-delay: 0.5s; }
+.small-hearts .small-heart:nth-child(3) { left: 50%; animation-delay: 1s; }
+.small-hearts .small-heart:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.small-hearts .small-heart:nth-child(5) { left: 90%; animation-delay: 2s; }
+.small-hearts .small-heart:nth-child(6) { left: 20%; animation-delay: 1.2s; }
+.small-hearts .small-heart:nth-child(7) { left: 40%; animation-delay: 0.7s; }
+.small-hearts .small-heart:nth-child(8) { left: 60%; animation-delay: 1.8s; }
+.small-hearts .small-heart:nth-child(9) { left: 80%; animation-delay: 1.3s; }
+.small-hearts .small-heart:nth-child(10){ left: 50%; animation-delay: 2.3s; }
+
+/* Bubble animation reused for both hearts and text */
+@keyframes bubble {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+/* New bubbling text for "Rediet" */
+.rediet-bubble {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e74c3c; /* A red shade for contrast */
+  animation: bubble 3s ease-in-out infinite;
+  opacity: 0.9;
+}

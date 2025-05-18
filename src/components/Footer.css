@@ -1,0 +1,11 @@
+footer {
+  background: rgba(255, 192, 203, 0.8); /* Transparent blush pink background */
+  padding: 20px 0;
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+}
+
+footer p {
+  margin: 0;
+}
