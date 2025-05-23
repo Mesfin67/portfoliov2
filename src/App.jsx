@@ -1,35 +1,34 @@
-import React from "react";
-import NavigationBar from "./components/NavigationBar";
-import Home from "./components/Home";
-import Education from "./components/Education";
-import Experience from "./components/Experience";
-import About from "./components/About";
-import Gallery from "./components/Gallery";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import HeartAnimation from "./components/HeartAnimation";
-import "./App.css";
+import React from 'react';
+import NavigationBar from './components/NavigationBar';
+import Home from './components/Home';
+import Skills from './components/Skills';
+import Education from './components/Education';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <HeartAnimation />
+    <div className="app">
       <NavigationBar />
       <section id="home">
         <Home />
       </section>
+      <section id="skills">
+        <Skills />
+      </section>
       <section id="education">
         <Education />
       </section>
-      <section id="experience">
-        <Experience />
+       <section id="projects">
+        <Projects />
       </section>
       <section id="about">
         <About />
       </section>
-      <section id="gallery">
-        <Gallery />
-      </section>
+     
       <section id="contact">
         <Contact />
       </section>

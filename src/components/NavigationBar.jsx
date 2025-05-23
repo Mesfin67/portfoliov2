@@ -6,15 +6,16 @@ import './NavigationBar.css';
 const NavigationBar = () => {
   const [expanded, setExpanded] = useState(false);
 
+  // Collapse the navbar
   const handleNavClick = () => {
     setExpanded(false);
   };
 
   return (
-    <Navbar expand="lg" fixed="top" expanded={expanded} className="custom-navbar">
+    <Navbar expanded={expanded} expand="lg" fixed="top" className="custom-navbar">
       <Container>
         <Navbar.Brand href="#" className="brand" onClick={handleNavClick}>
-          Rediet Tesfaye
+          Mesfin Bebulo
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
@@ -38,8 +39,22 @@ const NavigationBar = () => {
               duration={500}
               className="nav-link"
               onClick={handleNavClick}
+              onSetActive={handleNavClick}
             >
               Home
+            </Link>
+            <Link
+              activeClass="active"
+              to="skills"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="nav-link"
+              onClick={handleNavClick}
+              onSetActive={handleNavClick}
+            >
+              Skills
             </Link>
             <Link
               activeClass="active"
@@ -50,32 +65,22 @@ const NavigationBar = () => {
               duration={500}
               className="nav-link"
               onClick={handleNavClick}
+              onSetActive={handleNavClick}
             >
               Education
             </Link>
             <Link
               activeClass="active"
-              to="about"
+              to="projects"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
               className="nav-link"
               onClick={handleNavClick}
+              onSetActive={handleNavClick}
             >
-              About Me
-            </Link>
-            <Link
-              activeClass="active"
-              to="gallery"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              className="nav-link"
-              onClick={handleNavClick}
-            >
-              Gallery
+              Projects
             </Link>
             <Link
               activeClass="active"
@@ -86,6 +91,7 @@ const NavigationBar = () => {
               duration={500}
               className="nav-link"
               onClick={handleNavClick}
+              onSetActive={handleNavClick}
             >
               Contact
             </Link>

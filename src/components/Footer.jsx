@@ -4,9 +4,9 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="py-3" style={{ background: 'rgba(255, 192, 203, 0.8)' }}>
+    <footer className="py-3">
       <Container className="text-center">
-        <p>&copy; 2025 Rediet Tesfaye
+        <p>&copy; 2025 Mesfin Jr
 </p>
       </Container>
     </footer>

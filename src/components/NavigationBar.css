@@ -1,54 +1,91 @@
-/* Navbar background with a translucent blush pink */
-.custom-navbar {
-  background: rgba(255, 192, 203, 0.5);
-  backdrop-filter: blur(5px);
-  padding: 0.5rem 0;
+:root {
+  --primary-color: #6f42c1; /* Your purplish primary color */
 }
 
-/* Brand styles */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+  padding: 10px 0;
+}
+
+/* Brand styling */
 .brand {
   font-weight: bold;
-  color: #fff;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-/* Nav links styling */
+/* Toggle button styling (hamburger & X) without outline or border */
+.custom-toggler,
+.custom-toggler:focus,
+.custom-toggler:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none;
+}
+
+.custom-toggler .toggler-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Remove focus outline on nav links */
+.nav-link:focus {
+  outline: none !important;
+}
+
+/* Navigation links styling */
 .nav-links {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .nav-link {
   cursor: pointer;
+  margin: 0 15px;
   color: #fff;
-  font-weight: 600;
-  margin: 0 10px;
-  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
+.nav-link:hover,
 .nav-link.active {
-  border-bottom: 2px solid #fff;
+  color: var(--primary-color);
 }
 
-/* Custom Toggler Styling */
-.custom-toggler {
-  padding: 0.25rem 0.5rem;
-  font-size: 1.2rem;
-  background: transparent;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+.nav-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  margin-top: 5px;
 }
 
-.custom-toggler:focus,
-.custom-toggler:active {
-  outline: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Toggler Icon styling */
-.toggler-icon {
-  font-size: 1.5rem;
-  color: #fff;
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  /* Hide the collapse content when not expanded */
+  .navbar-collapse.collapse:not(.show) {
+    display: none;
+  }
+  
+  /* When expanded, show the collapse content with vertical layout */
+  .navbar-collapse.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .nav-link {
+    margin: 0;
+    text-align: center;
+  }
 }

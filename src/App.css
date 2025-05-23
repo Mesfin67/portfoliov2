@@ -12,3 +12,6 @@ html,
 body {
   overflow-x: hidden;
 }
+:root {
+  --primary-color: #9B7EBD; /* Your purplish primary color */
+}

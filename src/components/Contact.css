@@ -1,26 +1,133 @@
+/* Overall modern contact section with a striking gradient background */
 .contact-section {
-  background: #ffe6f0;
-  padding: 80px 0;
-}
-
-.contact-section h2 {
+  padding: 80px 20px;
+  background: #9B7EBD;
+  color: #fff;
   text-align: center;
-  font-size: 2.5rem;
+}
+
+.contact-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contact-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* Two-column layout for details and form */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Info card with glassmorphic effect */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
-  color: #333;
 }
 
-.contact-section form {
-  max-width: 600px;
-  margin: 0 auto;
+.info-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.contact-section label {
-  color: #333;
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
-.contact-section .form-control {
-  border-radius: 0;
-  padding: 10px;
-  margin-top: 5px;
+.info-icon {
+  font-size: 20px;
+  margin-right: 15px;
+  color: #fff;
+}
+
+.info-social a {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.info-social a:hover {
+  color: #f0f0f0;
+}
+
+/* Glassmorphic contact form card */
+.form-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width: 100%;
+  text-align: left;
+}
+
+.form-card .form-control {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.form-card .form-control::placeholder {
+  color: #eee;
+}
+
+.form-card .form-control:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #fff;
+  box-shadow: none;
+}
+
+.contact-submit {
+  margin-top: 15px;
+  background: #fff;
+  color: #764ba2;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-3px);
+}
+
+.contact-submit {
+  background: var(--primary-color);
+}
+
+.info-icon {
+  color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .contact-content {
+    flex-direction: column;
+  }
+  .contact-info, .form-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }

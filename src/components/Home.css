@@ -1,84 +1,129 @@
+:root {
+  --primary-color: #6f42c1; /* Your primary purplish color */
+}
+
 .home-section {
-  background: #ffe6f0; /* Blush pink background */
-  padding-top: 80px; /* Adjust to clear the fixed navbar */
-  padding-bottom: 20px;
+  padding: 80px 20px;
+  background: #fff;
+  margin-top: 60px;
 }
 
-.home-container {
-  max-width: 100%;
-  padding: 10px 15px;
-}
-
-/* Flex layout for wide screens */
 .home-row {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-}
-
-/* Centering each column */
-.home-image,
-.home-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-/* Image sizing */
-.home-image img {
-  max-width: 300px;
-  width: 100%;
-}
-
-/* Text styling */
 .home-text {
   padding: 0 20px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-/* Mobile view: stack vertically */
-@media (max-width: 767px) {
-  .home-row {
-    flex-direction: column;
-    text-align: center;
-  }
-  .home-image {
-    margin-bottom: 20px;
-  }
-  .home-image img {
-    max-width: 150px;
-  }
+.home-text h1 {
+  margin-bottom: 10px;
 }
 
-/* Animation keyframes */
+.home-text p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.social-icons {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-icons a {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Button container styles */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px 0;
+}
+
+/* Download CV button styles */
+.download-btn {
+  position: relative;
+  overflow: hidden;
+  padding-right: 20px; /* leave room for icon */
+}
+
+.download-btn .btn-text {
+  transition: opacity 0.3s ease;
+  display: inline-block;
+}
+
+.download-btn .btn-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.download-btn:hover .btn-text {
+  opacity: 0;
+}
+
+.download-btn:hover .btn-icon {
+  opacity: 1;
+}
+
+/* Glitch effect for contact btn */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.contact-btn:hover {
+  animation: glitch 0.5s linear;
+}
+
+/* Slide-in animations for the home section */
 @keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
 }
-
 @keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
 }
-
-/* Animation classes */
 .slide-in-left {
   animation: slideInLeft 1s ease-out;
 }
-
 .slide-in-right {
   animation: slideInRight 1s ease-out;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .home-code {
+    margin-top: 20px;
+  }
+  .button-container {
+    flex-direction: column;
+  }
+  .button-container button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
