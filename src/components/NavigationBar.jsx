@@ -15,7 +15,7 @@ const NavigationBar = () => {
     <Navbar expanded={expanded} expand="lg" fixed="top" className="custom-navbar">
       <Container>
         <Navbar.Brand href="#" className="brand" onClick={handleNavClick}>
-          Mesfin Bebulo
+          Mesfin
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"

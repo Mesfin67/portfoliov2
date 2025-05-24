@@ -2,6 +2,7 @@
   --primary-color: #6f42c1;
 }
 
+/* Base Education Section */
 .education-section {
   padding: 60px 20px;
   background: #fff;
@@ -13,7 +14,11 @@
   color: var(--primary-color);
 }
 
-/* Timeline Container */
+/* ---------------- Desktop Timeline Styles ---------------- */
+.desktop-timeline {
+  display: block;
+}
+
 .timeline {
   position: relative;
   padding: 20px 0;
@@ -41,7 +46,7 @@
   background: var(--primary-color);
   border-radius: 50%;
   transform: translate(-50%, 0);
-  top: 0;  /* Updated via JS on scroll */
+  top: 0;
   transition: top 0.2s ease-out;
 }
 
@@ -56,34 +61,31 @@
   animation: fadeInUp 0.8s forwards;
 }
 
-/* Stagger animations for successive items */
+/* Stagger animations for desktop timeline */
 .timeline-item:nth-child(2) {
   animation-delay: 0.3s;
 }
-
 .timeline-item:nth-child(3) {
   animation-delay: 0.6s;
 }
 
-/* Align items on larger screens */
+/* Alignment for desktop timeline items */
 .timeline-item:nth-child(odd) {
   left: 0;
   text-align: right;
 }
-
 .timeline-item:nth-child(even) {
   left: 50%;
   text-align: left;
 }
 
-/* Timeline Date */
+/* Timeline Date & Content Styling */
 .timeline-date {
   font-weight: bold;
   margin-bottom: 10px;
   color: var(--primary-color);
 }
 
-/* Timeline Content */
 .timeline-content {
   background: var(--primary-color);
   padding: 15px;
@@ -96,51 +98,142 @@
 
 /* Fade In & Slide Up Animation */
 @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Mobile Adjustments: Vertical Tree with Stacked Cards */
-@media (max-width: 767px) {
-  /* Reserve space for the vertical tree */
-  .timeline {
-    padding-left: 10px;
-    margin: 20px 10px;
-    position: relative;
-  }
-  
-  /* Vertical line acting as the tree trunk on the left */
-  .timeline:before {
-    content: "";
-    position: absolute;
-    left: 10px; /* Adjust this value to position the tree as needed */
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--primary-color);
-  }
-  
-  /* Moving circle aligned with the vertical tree */
-  .moving-circle {
-    position: absolute;
-    left: 10px;
-    top: 0; /* This can be adjusted via JS on scroll if needed */
-    width: 20px;
-    height: 20px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    transition: top 0.2s ease-out;
-  }
-  
-  /* Timeline items appear as full-width cards stacked vertically */
-  .timeline-item {
-    width: 100%;
-    margin: 0 0 20px;
-    padding: 10px 15px;
-    box-sizing: border-box;
-    text-align: left;
-  }
+/* ---------------- Mobile Cards Styles ---------------- */
+.mobile-cards {
+  display: none;
 }
 
+/* Default state for mobile cards (no animation on page load) */
+.mobile-cards .card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  border-radius: 24px;
+  line-height: 1.6;
+  margin: 20px auto;
+  /* In mobile, initial state is hidden (opacity: 0, moved down) */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* When .animate is added by Intersection Observer, trigger animation */
+.mobile-cards .card.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.mobile-cards .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 36px;
+  border-radius: 22px;
+  color: #333;
+  overflow: hidden;
+  /* Light purple background for mobile cards */
+  background: #f3e5f5;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Layered Effect for Mobile Cards */
+.mobile-cards .content::before {
+  position: absolute;
+  content: "";
+  top: -4%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%);
+  background: #e0e0e0;
+  z-index: -1;
+  transform-origin: bottom;
+  border-radius: inherit;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mobile-cards .content::after {
+  position: absolute;
+  content: "";
+  top: -8%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%);
+  background: #dcdcdc;
+  z-index: -2;
+  transform-origin: bottom;
+  border-radius: inherit;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Icon & Date wrapper in mobile card header */
+.icon-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.date {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Mobile Card Header Text */
+.header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Mobile Card Paragraph */
+.para {
+  font-size: 16px;
+  opacity: 1;
+  margin: 0;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Optional Hover Effects for Mobile Cards (for devices that support hover) */
+.mobile-cards .card:hover {
+  transform: translate(0, -16px);
+}
+.mobile-cards .card:hover .content::before {
+  transform: translate(-50%, 0) rotate(-8deg);
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.mobile-cards .card:hover .content::after {
+  transform: translate(-50%, 0) rotate(8deg);
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------------- Responsive Adjustments ---------------- */
+/* On mobile screens, hide the desktop timeline and show mobile cards */
+@media (max-width: 767px) {
+  .desktop-timeline {
+    display: none;
+  }
+  .mobile-cards {
+    display: block;
+  }
+}

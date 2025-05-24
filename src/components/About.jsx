@@ -13,12 +13,21 @@ const About = () => {
           I enjoy experimenting with new technologies and innovative user experiences.
         </p>
         <div className="extra-info">
-          <div className="info-item"><FaMapMarkerAlt className="info-icon" /><span>Addis Ababa, Ethiopia</span></div>
-          <div className="info-item"><FaClock className="info-icon" /><span>Freelance Remotly</span></div>
-          <div className="info-item"><FaEnvelope className="info-icon" /><span>dev.mesfinb@gmail.com</span></div>
+          <div className="info-item">
+            <FaMapMarkerAlt className="info-icon" />
+            <span>Addis Ababa, Ethiopia</span>
+          </div>
+          <div className="info-item">
+            <FaClock className="info-icon" />
+            <span>Freelance Remotly</span>
+          </div>
+          <div className="info-item">
+            <FaEnvelope className="info-icon" />
+            <span>dev.mesfinb@gmail.com</span>
+          </div>
         </div>
         <div className="about-image-container">
-          <img src="/aa.JPG" alt="mesfinimage" className="clipped-image" />
+          <img src="/aa.jpg" alt="mesfinimage" className="fancy-image" />
         </div>
       </Container>
     </div>
